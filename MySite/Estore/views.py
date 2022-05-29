@@ -1,8 +1,11 @@
+import imp
 import re
 from unicodedata import category
 from django.shortcuts import render
+from django.contrib import messages
 from django.views import View
 from .models import Customer , Product , Cart , OrderPlaced
+from .forms import CustomerRegistrationForm
 
 # def home(request):
 #  return render(request, 'Estore/home.html')
@@ -52,8 +55,20 @@ def mobile(request , data=None):
 def login(request):
  return render(request, 'Estore/login.html')
 
-def customerregistration(request):
- return render(request, 'Estore/customerregistration.html')
+# def customerregistration(request):
+#  return render(request, 'Estore/customerregistration.html')
+
+class CustomerResigrationView(View):
+    def get(self,request):
+        form = CustomerRegistrationForm()
+        return render(request, 'Estore/customerregistration.html' , {'form' : form})
+    
+    def post(self, request):
+        form = CustomerRegistrationForm(request.POST)
+        if form.is_valid():
+            messages.success(request, 'Congratulations!! Registered Successfully.')
+            form.save()
+        return render(request, 'Estore/customerregistration.html', {'form':form})
 
 def checkout(request):
  return render(request, 'Estore/checkout.html')
