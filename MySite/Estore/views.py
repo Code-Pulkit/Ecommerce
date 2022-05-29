@@ -13,8 +13,12 @@ class ProductView(View) :
         bottomwears = Product.objects.filter(category = 'BW')
         return render(request , 'Estore/home.html' , {'mobiles' : mobiles})
 
-def product_detail(request):
- return render(request, 'Estore/productdetail.html')
+# def product_detail(request):
+#  return render(request, 'Estore/productdetail.html')
+class ProductDetailView(View):
+    def get(self,request, pk):
+        product = Product.objects.get(pk=pk)
+        return render(request , 'Estore/productdetail.html' , {'product' : product})
 
 def add_to_cart(request):
  return render(request, 'Estore/addtocart.html')
