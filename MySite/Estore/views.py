@@ -52,9 +52,6 @@ def mobile(request , data=None):
         mobiles = Product.objects.filter(category = 'M').filter(discounted_price__gte= 10000)
     return render(request, 'Estore/mobile.html' , {'mobiles' : mobiles})
 
-def login(request):
- return render(request, 'Estore/login.html')
-
 # def customerregistration(request):
 #  return render(request, 'Estore/customerregistration.html')
 
