@@ -1,7 +1,17 @@
+import re
+from unicodedata import category
 from django.shortcuts import render
+from django.views import View
+from .models import Customer , Product , Cart , OrderPlaced
 
-def home(request):
- return render(request, 'Estore/home.html')
+# def home(request):
+#  return render(request, 'Estore/home.html')
+class ProductView(View) : 
+    def get(self , request) : 
+        mobiles =  Product.objects.filter(category = 'M')
+        topwears = Product.objects.filter(category = 'TW')
+        bottomwears = Product.objects.filter(category = 'BW')
+        return render(request , 'Estore/home.html' , {'mobiles' : mobiles})
 
 def product_detail(request):
  return render(request, 'Estore/productdetail.html')
