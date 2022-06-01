@@ -6,9 +6,9 @@ from .models import (
  OrderPlaced
 )
 
-admin.site.register(Customer)
+@admin.register(Customer)
 class CustomerModelAdmin(admin.ModelAdmin):
- list_display = ['id', 'user', 'name', 'locality', 'city', 'zipcode', 'state']
+    list_display = ['user', 'name', 'locality', 'city', 'zipcode', 'state']
 
 @admin.register(Product)
 class ProductModelAdmin(admin.ModelAdmin):
