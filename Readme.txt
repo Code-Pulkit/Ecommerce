@@ -7,8 +7,8 @@ Motivation -->
   2. Apply all the Learning from the courses undertaken.
 
 Ideation --> 
-  1. First and Foremost , I looked up at famous e commerce websites for inspiration. I saw that they had Landing Pages , Specific Category Page , 
-  Login , Registration and Cart Pages.One Feature that intersted me was that a single id can have multiple Users with different address ,  
+  1. First and Foremost , I looked up at famous e commerce websites for inspiration. I saw that they had Landing Pages , Specific Category Page , Login , Registration and Cart Pages.
+  One Feature that intersted me was that a single id can have multiple Users with different address ,  
   so I also tried to implement.
   
   So I decided my UX that A person would start at landing page, if login could directly add things to the cart and proceed for checkout else to login page.
