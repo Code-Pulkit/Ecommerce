@@ -1,5 +1,7 @@
 # Ecommerce Website - 
 
+Django Was Used as Build in Admin Panel , Speedy Dev and Community Support.
+
 Motivation --> 
   1. Wanted to Learn more about Web Development
   2. Apply all the Learning from the courses undertaken.
